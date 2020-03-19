@@ -1,0 +1,51 @@
+<devices>
+    <device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.164.69.10</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.196.64.93</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.196.64.72</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.198.65.102</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.196.64.74</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.198.65.104</property>
+        </properties>
+    </device>
+	<device>
+        <jar>C:\Programming\Work\DALs\Serverlink-PDU\target\dal-avdevices-serverlink-SLPSB1008H-1.0.jar</jar>
+        <deviceClassName>com.insightsystems.symphony.dal.serverlink.SLPSB1008H</deviceClassName>
+        <properties>
+            <property name="host">10.196.69.95</property>
+        </properties>
+    </device>
+</devices>
