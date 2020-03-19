@@ -1,16 +1,7 @@
-# Crestron-RoomBookingPanel
-DAL for Crestron TSS and TSW panels running Exchange Calendar Scheduling projects.
+# Serverlink PDU 
+DAL for Serverlink SLPSB1008H PDU
 
-### Currently Monitored Statistics:
-- ConnectionStatusMessage
-- SerialNumber
-- BuildDate
-- CalendarSyncStatus
-- PanelSyncing
-- ExchangeUsername
-- PufVersion
-- ConnectionStatus
-- MacAddres
-
-### Current Controls:
-- Reboot
+## Functionality
+- View PDU current draw
+- View outlet state
+- Control outlet state
