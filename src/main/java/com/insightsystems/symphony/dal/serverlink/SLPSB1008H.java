@@ -14,6 +14,7 @@ import static java.util.Collections.singletonList;
 
 public class SLPSB1008H extends HttpCommunicator implements Monitorable, Pingable, Controller {
     private String[][] pduInfo = new String[8][2];
+    private static final String DALVersion = "v1.0";
     /*
         pduInfo[outlets,info]
                  |        |
@@ -64,11 +65,11 @@ public class SLPSB1008H extends HttpCommunicator implements Monitorable, Pingabl
 
         for (int i = 0;i<pduInfo.length; i++){
             if (pduInfo[i][0].equals(cp.getProperty())){
-                switch ((char)cp.getValue()){
-                    case '0':
+                switch (String.valueOf(cp.getValue())){
+                    case "0":
                         controlOutlets(""+i,false);
                         break;
-                    case '1':
+                    case "1":
                         controlOutlets(""+i,true);
                         break;
                     default: //in case control value is invalid for some reason.
@@ -127,9 +128,10 @@ public class SLPSB1008H extends HttpCommunicator implements Monitorable, Pingabl
 
     private void controlOutlets(String outletString,boolean requestedState) throws Exception{
         final char[] outlets = outletString.toCharArray();
+        System.out.println(outletString);
         char[] control = {'0','0','0','0','0','0','0','0'};
         for (int i = 0; i < outlets.length; i++) {
-            control[outlets[i]-1] = '1';
+            control[outlets[i]-'0'] = '1';
         }
         if (requestedState) {
             doPost("/ons.cgi?led=" + stringifyChars(control), "");
@@ -150,8 +152,7 @@ public class SLPSB1008H extends HttpCommunicator implements Monitorable, Pingabl
         }
         return output;
     }
-
-
+    
     public static void main(String[] args) throws Exception {
         SLPSB1008H test = new SLPSB1008H();
         test.setHost("10.164.69.10");
@@ -166,6 +167,18 @@ public class SLPSB1008H extends HttpCommunicator implements Monitorable, Pingabl
         res.getControl().forEach((k,v)->{
             System.out.println(k + " : " + v);
         });
+        ControllableProperty cp = new ControllableProperty();
+        cp.setValue(1);
+        cp.setProperty("PIR");
+        test.controlProperty(cp);
+        cp.setValue('1');
+        test.controlProperty(cp);
+        cp.setValue("1");
+        test.controlProperty(cp);
+        Thread.sleep(5000);
+        res = (ExtendedStatistics)test.getMultipleStatistics().get(0);
+        res.getStatistics().forEach((k,v)->{
+            System.out.println(k + " : " + v);
+        });
     }
 }
-
